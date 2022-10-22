@@ -1,12 +1,12 @@
+#include <unistd.h>
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * _putchar - writes the character c to stdout
+ *@c: the character to print
+ Return: do sucess 1 else -1
  */
-int main(void)
+int _putcher(char c)
 {
-    print_numbers();
-    return (0);
+	return (write(1, &c, 1));
 }
