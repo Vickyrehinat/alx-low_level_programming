@@ -3,8 +3,7 @@
 
 /**
  * _stropy - copies the string pointed to by src.
- * including the terminating null byte to the
- * buffer pointed to by dest
+ * including the terminating null byte to the buffer pointed to by dest
  * @dest: destination
  * @src: source
  * Return: the pointer to dest
@@ -20,5 +19,6 @@ char *_stropy(char *dest, char *src)
 			break;
 		count++;
 	}
+
 	return (dest);
 }
