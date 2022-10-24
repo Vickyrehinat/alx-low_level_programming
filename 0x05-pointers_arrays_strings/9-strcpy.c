@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * _stropy - copies the string pointed to by src.
+ * _strcpy - copies the string pointed to by src.
  * including the terminating null byte to the buffer pointed to by dest
  * @dest: destination
  * @src: source
  * Return: the pointer to dest
  */
-char *_stropy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int count = 0;
 
@@ -19,6 +19,5 @@ char *_stropy(char *dest, char *src)
 			break;
 		count++;
 	}
-
 	return (dest);
 }
