@@ -5,7 +5,7 @@
  * @n: input string
  * Return: capitalized string
  */
-char *string_toupper(change *n)
+char *string_toupper(char *n)
 {
 	int i;
 
