@@ -1,4 +1,4 @@
-#Include "main.h"
+#include "main.h"
 
 /**
  * atoi - convert a string to an integer
@@ -6,7 +6,7 @@
  *
  * Return: an integer
  */
-int_atoi(char *s);
+int_atoi(char *s)
 {
 	int c = 0;
 	unsigned int ni = 0;
