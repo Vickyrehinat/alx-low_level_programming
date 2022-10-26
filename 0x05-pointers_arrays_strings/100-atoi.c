@@ -14,6 +14,7 @@ int _atoi(char *s);
 	int isi = 0;
 
 	while (s[c])
+
 	{
 		if (s[c] == 45)
 		{
