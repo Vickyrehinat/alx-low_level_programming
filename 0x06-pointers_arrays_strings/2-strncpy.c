@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _strncpy - entry point 
+ * _strncpy - entry point
  * @dest: copy to
  * @src: copy from
  * @n: input number of char
  * Return: Always 0 (success)
  */
-char *_strncpy(char  *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
 
