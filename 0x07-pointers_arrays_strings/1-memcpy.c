@@ -1,21 +1,21 @@
-#include <stdio.h> 
- #include "holberton.h" 
-  
- /** 
-  * _strchr - Entry point 
-  * @s: input 
-  * @c: input 
-  * Return: Always 0 (Success) 
-  */ 
- char *_strchr(char *s, char c) 
- { 
-         int i; 
-  
-         for (i = 0; s[i] >= '\0'; i++) 
-         { 
-                 if (s[i] == c) 
-                         return (s + i); 
-         } 
-  
-         return (NULL); 
- }
+#include "main.h"
+
+/**
+ * _memcpy - Entry point
+ * @dest: input
+ * @src: input
+ * @n: input
+ * Return: always 0 (success)
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int i = 0;
+
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+
+	return (dest);
+}
