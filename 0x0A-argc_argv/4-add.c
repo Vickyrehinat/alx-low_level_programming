@@ -1,12 +1,16 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "main.h"
+
 /**
- * main - entry point
- * @argc: arguements
- * @argv: array pointing to arguements
- * Return: 0
+ * main - add positive numbers
+ *
+ * @argc: number of command line arguements
+ * @argv: array that contains the program command line arguement
+ *
+ * Return: 0 (success)
  */
+
 int main(int argc, char *argv[])
 {
 	int i, j, add = 0;
