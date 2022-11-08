@@ -1,45 +1,47 @@
 #include "main.h"
 #include "stdlib.h"
-#include "stdio.h"
+#include "studio.h"
+
 /**
- * str_concat - get end of input and add together for size
- * @s1: input one to concat
- * @s2: input two to concat
- * Return: concat of 1 and s2
+ * str_concat - concatenate two strings.
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: a pointer to a newly allocated space in memory which
+ * contains the content of s1, followed by the content of s2,
+ * and null terminated. NULL on failure
  */
 char *str_concat(char *s1, char *s2)
 {
-	int end1, end2, i = 0;
-	char *array;
+	int i, j, len1, len2, len;
+	char *result;
 
-	if (s1 == NULL || s2 == NULL)
-		S1 = S2 = "";
+	len1 = len2 = 0;
 
-	for (end1 = 0; end1 <= *s1; end1++)
+	if (s1 != NULL)
 	{
+		i = 0;
+		while (s1[i++] != '\0')
+			len1++;
 	}
 
-	for (end2 = 0; end2 <= *s2; end2++)
+	if (s2 != NULL)
 	{
+		i = 0;
+		while (s2[i++] != '\0')
+			len2++;
 	}
 
-	array = malloc(sizeof(char) * (end1 + end2 + 1));
-
-	if (array == NULL)
+	len = len1 + len2;
+	result = (char *)malloc(sizeof(char) * (len + 1));
+	if (result == NULL)
 		return (NULL);
 
-	while (*s1)
-	{
-		array[i] = *s1;
-		i++;
-		s1++;
-	}
+	for (i = 0; i < len1; i++)
+		result[i] = s1[i];
+	for (j = 0; j < len2; j++, i++)
+		result[i] = s2[j];
+	result[len] = '\0';
 
-	while (*s2)
-	{
-		array[i] = *s2;
-		i++;
-		s2++;
-	}
-	return (array);
+	return (result);
 }
