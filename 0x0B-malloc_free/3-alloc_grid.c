@@ -4,14 +4,14 @@
 /**
  * alloc_grid - nested loop to make grid
  * @width: width input
- * @height: height: height input
+ * @height: height input
  * Return: pointer to dim. array
  */
 int **alloc_grid(int width, int height)
 {
 	int **iarray;
 	int i, n;
-
+ 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
