@@ -2,49 +2,43 @@
 #include "stdlib"
 
 /**
- * argstostr - concatenates all the arguements of your program.
- * @ac: arguements count
- * @av: arguements vector
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
  *
- * Return: a pointer to a new string, or NULL if it fails
+ * Return: 0
  */
 char *argstostr(int ac, char **av)
 {
-	char *str, *s;
-	int i, j, k, len = 0;
+	int i, n, k = 0, len = 0;
+	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
-		s = av[i];
-		j = 0;
-
-		while (s[j++])
+		for (n = 0; av[i][n]; n++)
 			len++;
-		len++;
 	}
+	len += ac;
 
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (NULL);
 
-	for (i = 0, j = 0; i < ac && j < len; i++)
+	for (i = 0; i < ac; i++)
 	{
-		s = av[i];
-		k = 0;
-
-		while (s[k])
+		for (n = 0; av[i][n]; n++)
 		{
-			str[j] = s[k];
+			str[k] = av[i][n];
 			k++;
-			j++;
 		}
-		str[j++] = '\n';
+		if (str[k] == '\0')
+		{
+			str[k++] = '\n';
+		}
 	}
-	str[j] = '\0';
-
 	return (str);
 }
 
