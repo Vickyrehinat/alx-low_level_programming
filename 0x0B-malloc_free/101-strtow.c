@@ -45,7 +45,7 @@ char **strtow(char *str)
 
 /**
  * util - a util function for fetching words into an array
- * words: the string array
+ * @words: the strings array
  * @str: the string
  */
 void util(char **words, char *str)
