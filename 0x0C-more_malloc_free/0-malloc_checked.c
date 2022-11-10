@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #include "stdio.h"
 /**
- * malloc_checked - Entry point
+ * malloc_checked - entry point
  * @b: input amount
  * Return: pointer to new mem
  */
