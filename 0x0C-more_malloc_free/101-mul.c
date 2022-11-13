@@ -1,9 +1,9 @@
-#include "string.h"
+#include<string.h>
 #include "main.h"
-#include "stdlib.h"
-#include "stdio.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
- * _isdigit - checks if character is a digit
+ * _isdigit - checks if character is digit
  * @c: the character to check
  *
  * Return: 1 if digit, 0 otherwise
@@ -38,53 +38,53 @@ int _strlen(char *s)
 char *big_multiply(char *s1, char *s2)
 {
 	char *r;
+	int l1, l2, a, b, c, x;
 
-	intI1, I2, a, b, c, x;
-
-	I1 = _strlen(s1);
-	I2 = _strlen(s2);
-	r = malloc(a = x = I1 + I2);
+	l1 = _strlen(s1);
+	l2 = _strlen(s2);
+	r = malloc(a = x = l1 + l2);
 	if (!r)
 		printf("Error\n"), exit(98);
 	while (a--)
 		r[a] = 0;
 
-	for (I1--; I1 >= 0; I1--)
+	for (l1--; l1 >= 0; l1--)
 	{
-		if (!_isdigit(s1[I1]))
+		if (!_isdigit(s1[l1]))
 		{
 			free(r);
-			printf("Error\n"), exist(98);
+			printf("Error\n"), exit(98);
 		}
-		a = s1[I1] - '0';
+		a = s1[l1] - '0';
 		c = 0;
 
-		for (I2 = _strlen(s2) - 1; I2 >= 0; I2--)
+		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
 		{
-			if (!_isdigit(s2[I2]))
+			if (!_isdigit(s2[l2]))
 			{
 				free(r);
-				printf("Error\n"), exist(98);
+				printf("Error\n"), exit(98);
 			}
-			b = s2[I2] - '0';
+			b = s2[l2] - '0';
 
-			c += r[I1 + I2 + 1] + (a * b);
-			r[I1 + l2 + 1] = c % 10;
+			c += r[l1 + l2 + 1] + (a * b);
+			r[l1 + l2 + 1] = c % 10;
 
 			c /= 10;
 		}
 		if (c)
-			r[I1 + I2 + 1] += C;
+			r[l1 + l2 + 1] += c;
 	}
 	return (r);
 }
 
+
 /**
  * main - multiply two big number strings
- * @argc: the number of arguements
- * @argv: the arguement vector
+ * @argc: the number of arguments
+ * @argv: the argument vector
  *
- * Return: always 0 0n success.
+ * Return: Always 0 on success.
  */
 int main(int argc, char **argv)
 {
@@ -112,4 +112,3 @@ int main(int argc, char **argv)
 	free(r);
 	return (0);
 }
-
