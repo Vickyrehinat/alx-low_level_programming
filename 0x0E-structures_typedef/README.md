@@ -1,1 +1,1 @@
-0x0E structure typedef
+0x0E-structure typedef
