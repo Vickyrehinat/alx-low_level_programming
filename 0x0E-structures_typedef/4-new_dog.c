@@ -1,82 +1,44 @@
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "dog.h"
-
 /**
- * _copy - make a copy of passed in arguement
- * @src: data to make a copy of
- * Return: pointer
+ * new_dog - creates a new dog
+ *
+ * @name: pointer to a variable to copy
+ * @owner: pointer to a variable to copy
+ * @age: float variable type
+ *
+ * Return: to dog_t or NULL if it fail
  */
-
-char *_copy(char *src)
-{
-	char *ptr;
-	int i, len;
-
-	if (src == NULL)
-	{
-		return (NULL);
-	}
-
-	for (len = 0; src[len] != '\0'; len++)
-		;
-
-	ptr = malloc(sizeof(char) * (len + 1));
-
-	if (ptr == NULL)
-	{
-		return (NULL);
-	}
-
-	for (i = 0; src[i] != '\0'; i++)
-	{
-		ptr[i] = src[i];
-	}
-
-	ptr[i] = '\0';
-	return (ptr);
-}
-
-/**
- * new_dog - create a new dog variable
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
- * Return: pointer to new dog variable
- */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *snoopie;
-	char *new_name, *new_owner;
+	int namerunner, ownerrunner;
+	dog_t *new_dog = malloc(sizeof(dog_t));
 
-	if (name == NULL || owner == NULL)
+	if (new_dog == NULL)
+	return (new_dog);
+	for (namerunner = 0; name[namerunner]; namerunner++)
 	{
+	}
+	for (ownerrunner = 0; owner[ownerrunner]; ownerrunner++)
+	{
+	}
+	new_dog->name = malloc((namerunner + 1) * sizeof(char));
+	new_dog->owner = malloc((ownerrunner + 1) * sizeof(char));
+	if (new_dog->name == NULL || new_dog->owner == NULL)
+	{
+		free(new_dog->name);
+		free(new_dog->owner);
+		free(new_dog);
 		return (NULL);
 	}
-	snoopie = malloc(sizeof(dog_t));
-	if (snoopie == NULL)
-	{
-		return (NULL);
-	}
-
-	new_name = _copy(name);
-	if (new_name == NULL)
-	{
-		free(snoopie);
-		return (NULL);
-	}
-	(*snoopie).name = new_name;
-
-	(*snoopie).age = age;
-
-	new_owner = _copy(owner)
-		if (new_owner == NULL)
-		{
-			free((*snoopie).name);
-			free(snoopie);
-			return (NULL);
-		}
-	(*snoopie).owner = new_owner;
-
-	return (snoopie);
+	for (namerunner = 0; name[namerunner]; namerunner++)
+		new_dog->name[namerunner] = name[namerunner];
+	for (ownerrunner = 0; owner[ownerrunner]; ownerrunner++)
+		new_dog->owner[ownerrunner] = owner[ownerrunner];
+	new_dog->name[namerunner] = 0;
+	new_dog->owner[ownerrunner] = 0;
+	new_dog->age = age;
+	return (new_dog);
 }
+

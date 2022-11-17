@@ -1,38 +1,38 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - check the code for holborten school students
- * @argc: arguement count
- * @argv: arguement vendor
+ * main - prints the opcodes of its own main function
  *
- * Return: always 0
+ * @argv: the argument that enters to the program
+ * @argc: counts the number of arguments
+ *
+ * Return: the opcode hex number
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	char *opc = (char *) main;
-	int i, nbytes;
+	int runner = 0, bytes;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
+	bytes = atoi(argv[1]);
 
-	nbytes = atoi(argv[1]);
-	if (nbytes < 0)
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-
-	for (i = 0; i < nbytes; i++)
+	while (runner < bytes)
 	{
-		printf("%02x", opc[i] & 0xFF);
-		if (i != nbytes - 1)
+		printf("%02hhx", *((char *)(main + runner)));
+		if (bytes > runner + 1)
 			printf(" ");
+		runner++;
 	}
-
 	printf("\n");
 	return (0);
 }
+
