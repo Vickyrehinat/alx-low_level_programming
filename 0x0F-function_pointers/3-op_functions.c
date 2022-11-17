@@ -1,69 +1,63 @@
+#include <stdio.h>
 #include "3-calc.h"
-
 /**
- * op_add - add two numbers
- * @a: first number
- * @b: second number
+ * op_add - sum to variables
  *
- * Return: add.
+ * @a: int to sum
+ * @b: int to sum
+ *
+ * Return: sum of ints
  */
 int op_add(int a, int b)
 {
 	return (a + b);
 }
-
 /**
- * op_sub - substract two numbers.
- * @a: first number
- * @b: second number
+ * op_sub - substracts a from b
  *
- * Return: difference.
+ * @a: int to check
+ * @b: to substract
+ *
+ * Return: difference of a and b
  */
 int op_sub(int a, int b)
 {
 	return (a - b);
-}}
-
+}
 /**
- * op_mul - multiply two numbers.
+ * op_mul - multiplicates a and b
+ *
  * @a: first number
  * @b: second number
  *
- * Return: multiplication
+ * Return: product of a and b
  */
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
-
 /**
  * op_div - divides two numbers
- * @a: first number
- * @b: second number. *
- * Return: division
+ *
+ * @a: number to be divided
+ * @b: number will divide
+ *
+ * Return: result of a division
  */
 int op_div(int a, int b)
 {
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	} return (a / b);
+	return (a / b);
 }
-
 /**
- * op_mod - calculate the modulesof two numbers
+ * op_mod - remainder of a division
+ *
  * @a: first number
  * @b: second number
  *
- * Returns: reminder of the division
+ * Return: a remaindes of the division
  */
 int op_mod(int a, int b)
 {
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
 	return (a % b);
 }
+

@@ -1,14 +1,13 @@
-#ifndef _CALC_H_
-#define _CALC_H_
-
-#include "stdlib.h"
-#include "stdio.h"
+#ifndef _STRUCT_OP_
+#define _STRUCT_OP_
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
- * struct op - struct op
+ * struct op - Struct op
  *
- *
- * @op: the operator
- * @f: the function associated
+ * @op: The operator
+ * @f: The function associated
  */
 typedef struct op
 {
@@ -24,3 +23,4 @@ int op_mod(int a, int b);
 int (*get_op_func(char *s))(int, int);
 
 #endif
+
