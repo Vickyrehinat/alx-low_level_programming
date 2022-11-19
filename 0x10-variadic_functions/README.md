@@ -1,1 +1,1 @@
-0x10-variadi_functions
+0x10 variadic function
