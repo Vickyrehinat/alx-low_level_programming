@@ -3,7 +3,7 @@
  * add_node - entry point
  * @head: input
  * @str: string
- * @Return: 0
+ * Return: 0
  */
 list_t *add_node(list_t **head, const char *str)
 {
@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, const char *str)
 	new->str = strdup(str);
 	new->next = *head;
 
-	*head = (new);
+	*head = new;
 
 	return (new);
 }
